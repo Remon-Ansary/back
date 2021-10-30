@@ -57,15 +57,11 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-
-app.get("/",(rec,res)=>{
-  res.send('hello')
-})
 // Routes
-// app.use("/api", authRouter);
-app.use("/user", usersRouter);
-app.use("/category", categoryRouter);
-app.use("/product", productRouter);
+app.use("/api", authRouter);
+app.use("/api/user", usersRouter);
+app.use("/api/category", categoryRouter);
+app.use("/api/product", productRouter);
 app.use("/api", brainTreeRouter);
 app.use("/api/order", orderRouter);
 app.use("/api/customize", customizeRouter);
